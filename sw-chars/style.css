@@ -1,0 +1,35 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+header {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+button {
+  background-color: rgb(102, 107, 122);
+  color: rgb(247, 247, 247);
+  font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+  display: flex;  
+}
+
+button:hover {
+  color: rgb(211, 211, 211);
+}
+
+main {
+    display: flex;
+    flex-wrap: wrap;
+  }
+
+figure {
+  padding: 20px;
+}
+  
+figure img {
+    width: 200px;
+  }

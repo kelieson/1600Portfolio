@@ -1,0 +1,152 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family:sans-serif;
+}
+
+@media (max-width: 1200px) {
+    html {
+        font-size: 75%
+    }
+}
+
+@media (max-width: 900px) {
+    html {
+        font-size: 55%
+    }
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+a {
+    text-decoration: none;
+}
+
+#navbar {
+    background-color: rgb(82, 0, 11);
+    width: 100%;
+    position: fixed;
+}
+
+.nav-list {
+    display: flex;
+    justify-content: flex-end;
+    list-style-type: none;
+}
+
+.nav-list a {
+    display: block;
+    padding: 1.25rem;
+    font-size: 1.5rem;
+    color: #ffe1e6;
+}
+
+.nav-list a:hover {
+    background-color: rgb(114, 1, 16);
+}
+
+#welcome-section {
+    height: 100vh;
+    background: linear-gradient(to top, #ff002250, #ffe1e6);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    color: rgb(255, 37, 66);
+    font-size: 2.5rem;
+}
+
+#projects {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-top: 50px;
+    margin-bottom: 50px;
+    text-justify: center;
+    text-align: center;
+}
+
+#projects h2 {
+    color: rgb(223, 0, 30);
+    font-size: 2rem;
+    margin: 20px 20px 35px 20px;
+}
+
+.projects-grid {
+    width: 1280px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+}
+
+.projects-grid img {
+    height: 250px;
+}
+
+.project-tile {
+    margin: 2rem;
+}
+
+img {
+    box-shadow: 1px 3px 4px rgb(255, 193, 200);
+}
+
+figcaption {
+    color: #ff889a;
+    font-size: 1.25rem;
+    margin-top: 10px;
+}
+
+#contact {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 30vh;
+    background-color: #ffd0d7;
+}
+
+#contact h2 {
+    color: rgb(255, 37, 66);
+    font-size: 3rem;
+    padding-top: 30px
+}
+
+#contact p {
+    color: rgb(255, 37, 66);
+    font-style: italic;
+    padding-top: 10px;
+}
+
+#contact div {
+    display: flex;
+    justify-content: center;
+    padding-top: 20px;    
+}
+
+#contact div a {
+    padding: 2.5rem;
+    font-size: 1.5rem;
+    color: white;
+    text-shadow: 2px 2px 1.5px rgb(255, 37, 66);
+}
+
+#contact div a:hover {
+    transform: translateY(7px);
+}
+
+footer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: rgb(114, 1, 16);
+    color: rgb(56, 0, 7);
+    font-size: small;
+    padding-top: 10px;
+    padding-bottom: 5px;
+}
