@@ -15,6 +15,8 @@ button {
   color: rgb(247, 247, 247);
   font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
   display: flex;  
+  padding: 1rem;
+  
 }
 
 button:hover {
@@ -24,6 +26,7 @@ button:hover {
 main {
     display: flex;
     flex-wrap: wrap;
+    justify-content: center;
   }
 
 figure {

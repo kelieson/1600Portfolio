@@ -45,7 +45,7 @@ function populateDOM(characters) {
     main.removeChild(main.firstChild)
   }
   
-Characters.forEach((element) => {
+characters.forEach((element) => {
   const personFig = document.createElement('figure')
   const personImg = document.createElement('img')
   let charNum = getLastNumber(element.url)
