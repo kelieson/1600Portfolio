@@ -26,6 +26,31 @@ otherButton.textContent = 'Other Characters'
 otherButton.addEventListener('click', () => populateDOM(otherCharacters))
 mainHeader.appendChild(otherButton)
 
+const greenButton = document.createElement("button")
+greenButton.textContent = "Characters for Whom it Ain't Easy Bein'"
+greenButton.addEventListener('click', () => populateDOM(greenCharacters))
+mainHeader.appendChild(greenButton)
+
+const salamiButton = document.createElement("button")
+salamiButton.textContent = "Characters Who Can Have a Little Salami as a Treat"
+salamiButton.addEventListener('click', () => populateDOM(salamiCharacters))
+mainHeader.appendChild(salamiButton)
+
+const trapButton = document.createElement("button")
+trapButton.textContent = "Characters Who Think It's a Trap"
+trapButton.addEventListener('click', () => populateDOM(trapCharacters))
+mainHeader.appendChild(trapButton)
+
+const notButton = document.createElement("button")
+notButton.textContent = "Characters Who are Definitely NOT Robots Why Would You Think That?"
+notButton.addEventListener('click', () => populateDOM(notCharacters))
+mainHeader.appendChild(notButton)
+
+const GreedoButton = document.createElement("button")
+GreedoButton.textContent = "Characters Who Didn't Shoot First"
+GreedoButton.addEventListener('click', () => populateDOM(greedo))
+mainHeader.appendChild(GreedoButton)
+
 const maleCharacters = people.filter((person) => person.gender === 'male')
 
 const femaleCharacters = people.filter((person) => person.gender === 'female')
@@ -39,6 +64,16 @@ const otherCharacters = people.filter((person) => {
     return person
   }
 })
+
+const greenCharacters = people.filter((person) => person.skin_color === 'green')
+
+const salamiCharacters = people.filter((person) => person.name === "Wicket Systri Warrick")
+
+const trapCharacters = people.filter((person) => person.name === "Ackbar")
+
+const notCharacters = people.filter((person) => person.name === "Lobot")
+
+const greedo = people.filter((person) => person.name === "Greedo")
 
 function populateDOM(characters) {
   while (main.firstChild) {

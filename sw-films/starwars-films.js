@@ -11,10 +11,12 @@ for (let i = 0; i < films.length; i++) {
 
   const foundFilm = films.find(film => getLastNumber(film.url) === (i + 1).toString())
 
+
   figCaption.textContent = foundFilm.title
-  
+
+
   figure.appendChild(figImg)
   figure.appendChild(figCaption)
-  
+
   filmList.appendChild(figure)
  }

@@ -4,23 +4,38 @@
   box-sizing: border-box;
 }
 
+h1 {
+  display: flex;
+  justify-content: center;
+  padding-top: 2rem;
+  font-family: sans-serif;
+}
+
 header {
   display: flex;
   justify-content: center;
   align-items: center;
+  flex-wrap: wrap;
+  padding-top: 1rem;
 }
 
 button {
-  background-color: rgb(102, 107, 122);
-  color: rgb(247, 247, 247);
-  font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
-  display: flex;  
+  font-family: sans-serif;
+  font-weight: 700;
   padding: 1rem;
-  
+  margin: 1rem;
+  color: rgb(14, 14, 14);
+  background-color: white;
+  border-color: rgb(226, 226, 226);
+  box-shadow: 2px 1px 6px rgb(167, 167, 167);
+  border-radius: 5px;
 }
 
 button:hover {
-  color: rgb(211, 211, 211);
+  background-color: rgb(14, 14, 14);
+  color: rgb(255, 255, 255);
+  border-color: rgb(14, 14, 14);
+  box-shadow: 2px 1px 6px rgb(14, 14, 14);
 }
 
 main {
@@ -35,4 +50,17 @@ figure {
   
 figure img {
     width: 200px;
+    border-radius: 3px;
+    box-shadow: 1px 1px 6px rgb(185, 185, 185);
+
   }
+
+figcaption {
+  display: flex;
+  justify-content: center;
+  font-family: sans-serif;
+  font-weight: 600;
+  color: rgb(14, 14, 14);
+  padding-top: .5rem;
+}
+
