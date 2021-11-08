@@ -2,13 +2,13 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+  font-family: "Roboto";
 }
 
 h1 {
   display: flex;
   justify-content: center;
   padding-top: 2rem;
-  font-family: sans-serif;
 }
 
 header {
@@ -20,7 +20,7 @@ header {
 }
 
 button {
-  font-family: sans-serif;
+
   font-weight: 700;
   padding: 1rem;
   margin: 1rem;
@@ -58,8 +58,6 @@ figure img {
 figcaption {
   display: flex;
   justify-content: center;
-  font-family: sans-serif;
-  font-weight: 600;
   color: rgb(14, 14, 14);
   padding-top: .5rem;
 }
