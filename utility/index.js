@@ -6,3 +6,9 @@ export function getLastNumber(url) {
     }
     return url.slice(start, end)
   }
+
+export function removeChildren(container) {
+    while (main.firstChild) {
+      main.removeChild(main.firstChild)
+    }
+}
