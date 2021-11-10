@@ -3,6 +3,8 @@
     padding: 0;
     box-sizing: border-box;
     font-family: "Roboto";
+    background-color: rgb(14, 14, 14);
+    color: white;
 }
 
 .mainContainer {
@@ -11,8 +13,24 @@
     align-items: center;
 }
 
+h1 {
+    display: flex;
+    justify-content: center;
+    padding-top: 2rem;
+    font-size: 2rem;
+    font-weight: 200;
+}
+
 .nav {
     margin-left: 2em;
+}
+
+.navList {
+    padding-top: 2rem;
+}
+
+li {
+    padding: .2rem;
 }
 
 section {
@@ -25,10 +43,16 @@ section {
 
 .box {
     font-size: 1.5rem;
-    color: rgb(14, 14, 14);
 }
 
 .shipName {
+    padding-top: 1rem;
     font-size: 2rem;
-    color: rgb(14, 14, 14);
+    font-weight: 300;
+}
+
+footer {
+    display: flex;
+    justify-content: center;
+    padding-top: 4rem;
 }
