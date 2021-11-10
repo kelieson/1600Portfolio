@@ -1,0 +1,16 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: 0;
+    font-family: "Roboto";
+}
+
+.senators {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+figure {
+    width: 160px;
+    height: 200px;
+}
