@@ -3,7 +3,7 @@
     padding: 0;
     box-sizing: border-box;
     font-family: "Roboto";
-    background-color: rgb(14, 14, 14);
+    background-color: rgb(10, 10, 10);
     color: white;
 }
 
@@ -46,13 +46,20 @@ section {
 }
 
 .shipName {
-    padding-top: 1rem;
     font-size: 2rem;
-    font-weight: 300;
+    font-weight: 600;
+    color: rgb(255, 145, 0);
+}
+
+img {
+    box-shadow: 0px 0px 12px rgb(5, 5, 5);
+    margin: 1rem;
 }
 
 footer {
     display: flex;
-    justify-content: center;
-    padding-top: 4rem;
+    padding-left: .7rem;
+    padding-bottom: .7rem;
+    font-size: .8rem;
+    padding-top: 7rem;
 }

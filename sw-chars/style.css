@@ -3,12 +3,20 @@
   padding: 0;
   box-sizing: border-box;
   font-family: "Roboto";
+  position: relative;
 }
+
+body {
+  min-height: 100vh;
+  padding-bottom: 4rem;
+}
+
 
 h1 {
   display: flex;
   justify-content: center;
   padding-top: 2rem;
+  color: rgb(24, 24, 24);
 }
 
 header {
@@ -20,14 +28,14 @@ header {
 }
 
 button {
-
   font-weight: 700;
   padding: 1rem;
   margin: 1rem;
   color: rgb(14, 14, 14);
+  color: rgb(235, 113, 0);
   background-color: white;
   border-color: rgb(226, 226, 226);
-  box-shadow: 2px 1px 6px rgb(167, 167, 167);
+  box-shadow: 2px 1px 6px rgb(194, 194, 194);
   border-radius: 5px;
 }
 
@@ -60,5 +68,14 @@ figcaption {
   justify-content: center;
   color: rgb(14, 14, 14);
   padding-top: .5rem;
+}
+
+footer {
+  display: flex;
+  bottom: 0;
+  position: absolute;
+  padding-left: .7rem;
+  padding-bottom: .7rem;
+  font-size: .8rem;
 }
 

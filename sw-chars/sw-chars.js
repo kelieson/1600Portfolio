@@ -27,7 +27,7 @@ otherButton.addEventListener('click', () => populateDOM(otherCharacters))
 mainHeader.appendChild(otherButton)
 
 const greenButton = document.createElement("button")
-greenButton.textContent = "Characters for Whom it Ain't Easy Bein'"
+greenButton.textContent = "It Ain't Easy Bein' Green"
 greenButton.addEventListener('click', () => populateDOM(greenCharacters))
 mainHeader.appendChild(greenButton)
 
@@ -46,10 +46,10 @@ notButton.textContent = "Characters Who are Definitely NOT Robots Why Would You 
 notButton.addEventListener('click', () => populateDOM(notCharacters))
 mainHeader.appendChild(notButton)
 
-const GreedoButton = document.createElement("button")
-GreedoButton.textContent = "Characters Who Didn't Shoot First"
-GreedoButton.addEventListener('click', () => populateDOM(greedo))
-mainHeader.appendChild(GreedoButton)
+const greedoButton = document.createElement("button")
+greedoButton.textContent = "Characters Who Didn't Shoot First"
+greedoButton.addEventListener('click', () => populateDOM(greedoCharacters))
+mainHeader.appendChild(greedoButton)
 
 const maleCharacters = people.filter((person) => person.gender === 'male')
 
@@ -73,7 +73,7 @@ const trapCharacters = people.filter((person) => person.name === "Ackbar")
 
 const notCharacters = people.filter((person) => person.name === "Lobot")
 
-const greedo = people.filter((person) => person.name === "Greedo")
+const greedoCharacters = people.filter((person) => person.name === "Greedo")
 
 function populateDOM(characters) {
   removeChildren(main)

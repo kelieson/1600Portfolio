@@ -29,3 +29,12 @@ figcaption {
     color: rgb(17, 17, 17);
     font-size: 1.3rem;
 }
+
+footer {
+    display: flex;
+    justify-content: left;
+    font-family: "Roboto";
+    font-size: .8rem;
+    padding-top: 4rem;
+    padding-left: .7rem;
+}
