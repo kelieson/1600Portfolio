@@ -11,6 +11,12 @@
 }
 
 figure {
+    display: flex;
+    flex-direction: column;
     width: 160px;
-    height: 200px;
+    margin: 2rem;
+}
+
+figcaption {
+    text-align: center;
 }
