@@ -1,11 +1,15 @@
 import { senators } from '../data/senators.js'
 import { reps } from '../data/representatives.js'
+import { removeChildren } from '../utility/index.js'
+
+const header = document.querySelector('#header')
 
 const members = [...senators, ...reps]
 
 const senatorDiv = document.querySelector('.senators')
 const seniorityHeading = document.querySelector('.seniority')
 const absentOrderedList = document.querySelector('.absentList')
+const spotlight = document.querySelector('.spotlight')
 
 function simplifiedMembers(chamberFilter) {
     const filteredArray = members.filter(member => chamberFilter ? member.short_title === chamberFilter : member)
@@ -41,15 +45,17 @@ function populateSenatorDiv(simpleSenators) {
     })
 }
 
-//const filterSenators = (prop, value) => simplifiedSenators(senators).filter(senator => senator[prop] === value)
+const filterSenators = (prop, value) => simplifiedMembers(senators).filter(senator => senator[prop] === value)
 
 //const republicans = filterSenators('party', 'R')
 //const femaleSenators = filterSenators('gender', 'F')
+
 const mostSeniorMember = simplifiedMembers().reduce((acc, senator) => {
     return acc.seniority > senator.seniority ? acc : senator
 })
 
 seniorityHeading.textContent = `The most senior member of Congress is ${mostSeniorMember.name} who has held office for ${mostSeniorMember.seniority} years.`
+seniorityHeading.className = 'seniorityHeading'
 
 const mostLoyal = simplifiedMembers().reduce((acc, senator) => {
     if (senator.loyaltyPct === 100) {
@@ -67,3 +73,16 @@ MissingSenators.forEach(absent => {
     listItem.textContent = absent.name
     absentOrderedList.appendChild(listItem)
 })
+
+const demButton = document.createElement("button")
+demButton.textContent = "Democrats"
+demButton.addEventListener('click', () => populateSpotlight(democrats))
+header.appendChild(demButton)
+
+//const democrats = filterSenators('party', 'D')
+
+const democrats = filterSenators('party', 'D')
+
+function populateSpotlight(democrats) {
+    removeChildren(spotlight)
+  }
