@@ -133,8 +133,9 @@ const republicans = simplifiedMembers().filter(
 );
 
 function populateRepSpotlight(simpleMembers) {
-  removeChildren(demSpotlight, repSpotlight, spotlight);
-
+  removeChildren(demSpotlight);
+  removeChildren(repSpotlight);
+  removeChildren(spotlight);
   simpleMembers.forEach((member) => {
     let spotFigure = document.createElement("figure");
     let figImg = document.createElement("img");
