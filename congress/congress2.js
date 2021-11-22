@@ -2,6 +2,18 @@ import { senators } from "../data/senators.js";
 import { reps } from "../data/representatives.js";
 import { removeChildren } from "../utility/index.js";
 
+
+
+
+// things i want to add:
+//      Responsive FAQ section anchors (seniority, missed votes)
+//      Make all members appear on load, but disappear when a button is pressed (add view all members button)
+//      Remove button timer wtf is that about? (is this just vs code/live preview refresh timing)
+//      If we have time,,, sorting features but probably not gonna happen lets be honest lads
+
+
+
+
 const members = [...senators, ...reps];
 
 const memberDiv = document.querySelector(".members");
@@ -9,6 +21,8 @@ const seniorityHeading = document.querySelector(".seniority");
 const spotlightList = document.querySelector(".spotlightList");
 const spotlight = document.querySelector(".spotlight");
 const buttonTown = document.querySelector(".buttonTown");
+const demSpotlight = document.querySelector(".demSpotlight")
+const repSpotlight = document.querySelector(".repSpotlight")
 
 seniorityHeading.className = "seniorityHeading";
 
@@ -78,19 +92,21 @@ MissingMembers.forEach((absent) => {
   spotlightList.appendChild(listItem);
 });
 
-// BUTTON STUFF
+// BUTTON TOWN v
+
+// DEMOCRATS v
 
 const demButton = document.createElement("button");
 demButton.textContent = "Democrats";
-demButton.addEventListener("click", () => populateSpotlight(democrats));
+demButton.addEventListener("click", () => populateDemSpotlight(democrats));
 buttonTown.appendChild(demButton);
 
 const democrats = simplifiedMembers().filter(
   (member) => member.party === "D"
 );
 
-function populateSpotlight(simpleMembers) {
-  removeChildren(spotlight);
+function populateDemSpotlight(simpleMembers) {
+  removeChildren(demSpotlight, repSpotlight, spotlight);
 
   simpleMembers.forEach((member) => {
     let spotFigure = document.createElement("figure");
@@ -100,19 +116,32 @@ function populateSpotlight(simpleMembers) {
     figCaption.textContent = member.name;
     spotFigure.appendChild(figImg);
     spotFigure.appendChild(figCaption);
-    spotlight.appendChild(spotFigure)
+    demSpotlight.appendChild(spotFigure)
   });
 }
 
-//function populatememberDiv(simplemembers) {
-//    simplemembers.forEach((member) => {
-//      let senFigure = document.createElement("figure");
- //     let figImg = document.createElement("img");
-   //   let figCaption = document.createElement("figcaption");
-     // figImg.src = member.imgURL;
-     // figCaption.textContent = member.name;
-    //  senFigure.appendChild(figImg);
-    //  senFigure.appendChild(figCaption);
-    //  memberDiv.appendChild(senFigure);
-   // });
-  //}
+const repButton = document.createElement("button");
+repButton.textContent = "Republicans";
+repButton.addEventListener("click", () => populateRepSpotlight(republicans));
+buttonTown.appendChild(repButton);
+
+// REPUBLICANS v
+
+const republicans = simplifiedMembers().filter(
+  (member) => member.party === "R"
+);
+
+function populateRepSpotlight(simpleMembers) {
+  removeChildren(demSpotlight, repSpotlight, spotlight);
+
+  simpleMembers.forEach((member) => {
+    let spotFigure = document.createElement("figure");
+    let figImg = document.createElement("img");
+    let figCaption = document.createElement("figcaption");
+    figImg.src = member.imgURL;
+    figCaption.textContent = member.name;
+    spotFigure.appendChild(figImg);
+    spotFigure.appendChild(figCaption);
+    repSpotlight.appendChild(spotFigure)
+  });
+}
