@@ -10,7 +10,8 @@ import { removeChildren } from "../utility/index.js";
 //      Make all members appear on load, but disappear when a button is pressed (add view all members button)
 //      Remove button timer wtf is that about? (is this just vs code/live preview refresh timing)
 //      If we have time,,, sorting features but probably not gonna happen lets be honest lads
-
+//      Style buttons!
+//      Tuck currently visible header info behind FAQ clicks
 
 
 
