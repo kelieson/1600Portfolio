@@ -6,10 +6,9 @@ import { removeChildren } from "../utility/index.js";
 
 
 // things i want to add:
+
 //      Responsive FAQ section anchors (seniority, missed votes)
-//      Make all members appear on load, but disappear when a button is pressed (add view all members button)
-//      Remove button timer wtf is that about? (is this just vs code/live preview refresh timing)
-//      If we have time,,, sorting features but probably not gonna happen lets be honest lads
+
 //      Style buttons!
 //      Tuck currently visible header info behind FAQ clicks
 
@@ -17,15 +16,21 @@ import { removeChildren } from "../utility/index.js";
 
 const members = [...senators, ...reps];
 
+// QUERY SELECTORS v
+
 const memberDiv = document.querySelector(".members");
-const seniorityHeading = document.querySelector(".seniority");
-const spotlightList = document.querySelector(".spotlightList");
 const spotlight = document.querySelector(".spotlight");
 const buttonTown = document.querySelector(".buttonTown");
 const demSpotlight = document.querySelector(".demSpotlight")
 const repSpotlight = document.querySelector(".repSpotlight")
+const missingQ = document.querySelector(".missingQ")
+const missingDiv = document.querySelector(".missingDiv")
+const seniorQ = document.querySelector(".seniorQ")
+const seniorDiv = document.querySelector(".seniorDiv")
+const loyalQ = document.querySelector(".loyalQ")
+const loyalDiv = document.querySelector(".loyalDiv")
 
-seniorityHeading.className = "seniorityHeading";
+// QUERY SELECTORS ^
 
 function simplifiedMembers(chamberFilter) {
   const filteredArray = members.filter((member) =>
@@ -62,43 +67,112 @@ function populateMemberDiv(simpleMembers) {
 }
 
 const filterMembers = (prop, value) =>
-  simplifiedMembers(Members).filter((member) => member[prop] === value);
+  simplifiedMembers(members).filter((member) => member[prop] === value);
 
-const mostSeniorMember = simplifiedMembers().reduce((acc, member) => {
-  return acc.seniority > member.seniority ? acc : member;
-});
+// FAQ v
 
-seniorityHeading.textContent = `The most senior member of Congress is ${mostSeniorMember.name} who has held office for ${mostSeniorMember.seniority} years.`;
+// SENIOR v
 
-const mostLoyal = simplifiedMembers().reduce((acc, member) => {
-  if (member.loyaltyPct === 100) {
+const seniorMembers = simplifiedMembers().reduce((acc, member) => {
+  if (member.seniority >= 40) {
     acc.push(member);
   }
   return acc;
 }, []);
 
+const seniorButton = document.createElement("button");
+seniorButton.textContent = "Who has held office the longest?";
+seniorButton.addEventListener("click", () => populateSeniorDiv(seniorMembers));
+seniorQ.appendChild(seniorButton);
+
+function populateSeniorDiv(seniorMembers) {
+  removeChildren(seniorDiv);
+  removeChildren(missingDiv);
+  removeChildren(loyalDiv);
+
+  seniorMembers.forEach((member) => {
+    let spotFigure = document.createElement("figure");
+    let figImg = document.createElement("img");
+    let figCaption = document.createElement("figcaption");
+    figImg.src = member.imgURL;
+    figCaption.textContent = `${member.name} has held office for ${member.seniority} years`; 
+    spotFigure.appendChild(figImg);
+    spotFigure.appendChild(figCaption);
+    seniorDiv.appendChild(spotFigure)
+  });
+}
+
+// LOYAL v
+
+const loyalMembers = simplifiedMembers().reduce((acc, member) => {
+  if (member.loyaltyPct >= 100) {
+    acc.push(member);
+  }
+  return acc;
+}, []);
+
+const loyalButton = document.createElement("button");
+loyalButton.textContent = "Who are the 100% party-loyal members of congress?";
+loyalButton.addEventListener("click", () => populateLoyalDiv(loyalMembers));
+loyalQ.appendChild(loyalButton);
+
+function populateLoyalDiv(loyalMembers) {
+  removeChildren(seniorDiv);
+  removeChildren(missingDiv);
+  removeChildren(loyalDiv);
+  
+  loyalMembers.forEach((member) => {
+    let spotFigure = document.createElement("figure");
+    let figImg = document.createElement("img");
+    let figCaption = document.createElement("figcaption");
+    figImg.src = member.imgURL;
+    figCaption.textContent = `${member.name}`; 
+    spotFigure.appendChild(figImg);
+    spotFigure.appendChild(figCaption);
+    loyalDiv.appendChild(spotFigure)
+  });
+}
+
+
+// MISSING v
 const highestMissedVotes = simplifiedMembers().reduce(
   (acc, member) =>
     (acc.missedVotesPct || 0) > member.missedVotesPct ? acc : member,
   {}
 );
 
-const MissingMembers = simplifiedMembers().filter(
+const missingButton = document.createElement("button");
+missingButton.textContent = "Who misses half or more of their votes?";
+missingButton.addEventListener("click", () => populateMissingDiv(missingMembers));
+missingQ.appendChild(missingButton);
+
+const missingMembers = simplifiedMembers().filter(
   (member) => member.missedVotesPct >= 50
 );
 
-MissingMembers.forEach((absent) => {
-  let listItem = document.createElement("li");
-  listItem.textContent = absent.name;
-  spotlightList.appendChild(listItem);
-});
+function populateMissingDiv(missingMembers) {
+  removeChildren(seniorDiv);
+  removeChildren(missingDiv);
+  removeChildren(loyalDiv);
+
+  missingMembers.forEach((member) => {
+    let spotFigure = document.createElement("figure");
+    let figImg = document.createElement("img");
+    let figCaption = document.createElement("figcaption");
+    figImg.src = member.imgURL;
+    figCaption.textContent = `${member.name} misses ${member.missedVotesPct}% of their votes`; 
+    spotFigure.appendChild(figImg);
+    spotFigure.appendChild(figCaption);
+    missingDiv.appendChild(spotFigure)
+  });
+}
 
 // BUTTON TOWN v
 
 // DEMOCRATS v
 
 const demButton = document.createElement("button");
-demButton.textContent = "Democrats";
+demButton.textContent = "See Democrats";
 demButton.addEventListener("click", () => populateDemSpotlight(democrats));
 buttonTown.appendChild(demButton);
 
@@ -107,14 +181,24 @@ const democrats = simplifiedMembers().filter(
 );
 
 function populateDemSpotlight(simpleMembers) {
-  removeChildren(demSpotlight, repSpotlight, spotlight);
+
+  removeChildren(demSpotlight);
+  removeChildren(repSpotlight);
+  removeChildren(spotlight);
+  removeChildren(memberDiv);
+  removeChildren(seniorDiv);
+  removeChildren(missingDiv);
+  removeChildren(loyalDiv);
 
   simpleMembers.forEach((member) => {
     let spotFigure = document.createElement("figure");
     let figImg = document.createElement("img");
     let figCaption = document.createElement("figcaption");
+    let anchor = document.createElement("a");
     figImg.src = member.imgURL;
     figCaption.textContent = member.name;
+    anchor.textContent = member.URL;
+    spotFigure.appendChild(anchor);
     spotFigure.appendChild(figImg);
     spotFigure.appendChild(figCaption);
     demSpotlight.appendChild(spotFigure)
@@ -122,7 +206,7 @@ function populateDemSpotlight(simpleMembers) {
 }
 
 const repButton = document.createElement("button");
-repButton.textContent = "Republicans";
+repButton.textContent = "See Republicans";
 repButton.addEventListener("click", () => populateRepSpotlight(republicans));
 buttonTown.appendChild(repButton);
 
@@ -133,9 +217,15 @@ const republicans = simplifiedMembers().filter(
 );
 
 function populateRepSpotlight(simpleMembers) {
+
+  removeChildren(seniorDiv);
+  removeChildren(missingDiv);
+  removeChildren(loyalDiv);
   removeChildren(demSpotlight);
   removeChildren(repSpotlight);
   removeChildren(spotlight);
+  removeChildren(memberDiv);
+
   simpleMembers.forEach((member) => {
     let spotFigure = document.createElement("figure");
     let figImg = document.createElement("img");
@@ -145,5 +235,34 @@ function populateRepSpotlight(simpleMembers) {
     spotFigure.appendChild(figImg);
     spotFigure.appendChild(figCaption);
     repSpotlight.appendChild(spotFigure)
+  });
+}
+
+// VIEW ALL v
+
+const allButton = document.createElement("button");
+allButton.textContent = "View All Members of Congress";
+allButton.addEventListener("click", () => populateSpotlight(simplifiedMembers()));
+buttonTown.appendChild(allButton);
+
+function populateSpotlight(simpleMembers) {
+
+  removeChildren(seniorDiv);
+  removeChildren(missingDiv);
+  removeChildren(loyalDiv);
+  removeChildren(demSpotlight);
+  removeChildren(repSpotlight);
+  removeChildren(spotlight);
+  removeChildren(memberDiv);
+
+  simpleMembers.forEach((member) => {
+    let spotFigure = document.createElement("figure");
+    let figImg = document.createElement("img");
+    let figCaption = document.createElement("figcaption");
+    figImg.src = member.imgURL;
+    figCaption.textContent = member.name;
+    spotFigure.appendChild(figImg);
+    spotFigure.appendChild(figCaption);
+    spotlight.appendChild(spotFigure)
   });
 }
