@@ -40,6 +40,7 @@ img {
 .faqHeader {
     padding-left: 2.5rem;
     padding-bottom: .2rem;
+    font-weight: 800;
 }
 
 .repSpotlight {
@@ -167,7 +168,8 @@ figure:hover img{
     background-color: rgb(230, 230, 230);
     color: rgb(54, 54, 54);
     border-radius: 2px;
-    border-color: rgb(230, 230, 230);
+    border-color: rgb(210, 210, 210);
+    border-width: 1px;
     border-style: solid;
     width: 100vw;
     display: flex;
@@ -179,8 +181,9 @@ figure:hover img{
     background-color: rgb(230, 230, 230);
     color: rgb(54, 54, 54);
     border-radius: 2px;
-    border-color: rgb(230, 230, 230);
     border-style: solid;
+    border-color: rgb(210, 210, 210);
+    border-width: 1px;
     width: 100vw;
     display: flex;
     padding: .4rem;
@@ -191,7 +194,8 @@ figure:hover img{
     background-color: rgb(230, 230, 230);
     color: rgb(54, 54, 54);
     border-radius: 2px;
-    border-color: rgb(230, 230, 230);
+    border-color: rgb(210, 210, 210);
+    border-width: 1px;
     border-style: solid;
     width: 100vw;
     display: flex;

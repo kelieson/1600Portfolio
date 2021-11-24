@@ -27,10 +27,6 @@ const seniorQ = document.querySelector(".seniorQ");
 const seniorDiv = document.querySelector(".seniorDiv");
 const loyalQ = document.querySelector(".loyalQ");
 const loyalDiv = document.querySelector(".loyalDiv");
-const loadSenFilter = document.querySelector(".loadSenFilter")
-const loadRepFilter = document.querySelector(".loadRepFilter")
-const allSenFilter = document.querySelector(".allSenFilter")
-const allRepFilter = document.querySelector(".allRepFilter")
 
 
 // QUERY SELECTORS ^
@@ -77,72 +73,6 @@ function populateMemberDiv(simpleMembers) {
     senFigure.appendChild(figCaption);
     memberDiv.appendChild(senFigure);
   });
-}
-
-const memSenButton = document.createElement("button");
-memSenButton.textContent = "Senators";
-memSenButton.addEventListener("click", () => populateMemSen(sens));
-loadSenFilter.appendChild(memSenButton);
-
-const sens = simplifiedMembers().filter(
-  (member) => member.shortTitle === "Sen."
-);
-
-function populateMemSen(sens) {
-  removeChildren(seniorDiv);
-  removeChildren(missingDiv);
-  removeChildren(loyalDiv);
-  removeChildren(demSpotlight);
-  removeChildren(repSpotlight);
-  removeChildren(spotlight);
-  removeChildren(memberDiv);
-  removeChildren(loadSenFilter);
-  removeChildren(loadRepFilter);
-  removeChildren(spotlight)
-
-  sens.forEach((member) => {
-    let senFigure = document.createElement("figure");
-    let figImg = document.createElement("img");
-    let figCaption = document.createElement("figcaption");
-    figImg.src = member.imgURL;
-    figCaption.textContent = member.name;
-    senFigure.appendChild(figImg);
-    senFigure.appendChild(figCaption);
-    memberDiv.appendChild(senFigure);
-  })
-}
-
-const memRepButton = document.createElement("button");
-memRepButton.textContent = "Representatives";
-memRepButton.addEventListener("click", () => populateMemRep(rep));
-loadRepFilter.appendChild(memRepButton);
-
-const rep = simplifiedMembers().filter(
-  (member) => member.shortTitle === "Rep."
-);
-
-function populateMemRep(rep) {
-  removeChildren(seniorDiv);
-  removeChildren(missingDiv);
-  removeChildren(loyalDiv);
-  removeChildren(demSpotlight);
-  removeChildren(repSpotlight);
-  removeChildren(spotlight);
-  removeChildren(memberDiv);
-  removeChildren(loadSenFilter);
-  removeChildren(loadRepFilter);
-  removeChildren(spotlight)
-
-  rep.forEach((member) => {
-    let senFigure = document.createElement("figure");
-    let figImg = document.createElement("img");
-    let figCaption = document.createElement("figcaption");
-    figImg.src = member.imgURL;
-    figCaption.textContent = member.name;
-    senFigure.appendChild(figImg);
-    senFigure.appendChild(figCaption);
-    memberDiv.appendChild(senFigure);
-  })
 }
 
 // FAQ v
@@ -275,8 +205,7 @@ function populateDemSpotlight(simpleMembers) {
   removeChildren(seniorDiv);
   removeChildren(missingDiv);
   removeChildren(loyalDiv);
-  removeChildren(loadSenFilter);
-  removeChildren(loadRepFilter);
+
 
   simpleMembers.forEach((member) => {
     let spotFigure = document.createElement("figure");
@@ -310,8 +239,7 @@ function populateRepSpotlight(simpleMembers) {
   removeChildren(repSpotlight);
   removeChildren(spotlight);
   removeChildren(memberDiv);
-  removeChildren(loadSenFilter);
-  removeChildren(loadRepFilter);
+
 
   simpleMembers.forEach((member) => {
     let spotFigure = document.createElement("figure");
@@ -345,9 +273,6 @@ function populateSpotlight(simpleMembers) {
   removeChildren(repSpotlight);
   removeChildren(spotlight);
   removeChildren(memberDiv);
-  removeChildren(loadSenFilter);
-  removeChildren(loadRepFilter);
-  removeChildren(spotlight)
 
   simpleMembers.forEach((member) => {
     let spotFigure = document.createElement("figure");
