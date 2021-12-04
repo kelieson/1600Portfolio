@@ -1,0 +1,31 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.scene {
+    width: 200px;
+    height: 260px;
+    margin: 2rem;
+}
+
+.card {
+    width: 100%;
+    height: 100%;
+    position: relative;
+}
+
+.cardFace {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+}
+
+.front {
+    background: pink;
+}
+
+.back {
+    background: powderblue;
+}
