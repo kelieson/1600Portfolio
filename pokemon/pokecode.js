@@ -58,6 +58,14 @@ typeButton.addEventListener('click', () => {
   allByType.forEach((item) => populatePokeCard(item))
 })
 
+const typeSelect = document.querySelector('#typeSelect')
+typeSelect.addEventListener('change', (event) => {
+  const usersTypeChoice = event.target.value.toLowerCase()
+  const allByType = getAllPokemonByType(usersTypeChoice)
+  removeChildren(pokeGrid)
+  allByType.forEach((item) => populatePokeCard(item))
+})
+
 const moreButton = document.querySelector('.moreButton')
 moreButton.addEventListener('click', () => {
     let limit = prompt('How many more Pokemon should I load?')
