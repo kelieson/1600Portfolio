@@ -39,6 +39,8 @@ async function getAllSimplePokemon() {
             types: pokeData.types,
             weight: pokeData.weight,
             height: pokeData.height,
+            stats: pokeData.stats,
+            items: pokeData.held_items,
           }
           allPokemon.push(mappedPokemon)
         })
@@ -61,6 +63,12 @@ typeSelect.addEventListener('change', (event) => {
   allByType.forEach((item) => populatePokeCard(item))
 })
 
+const resetButton = document.querySelector(".reset")
+resetButton.addEventListener('click', () => {
+  removeChildren(pokeGrid)
+  loadPokemon(0, 25)
+})
+
 const moreButton = document.querySelector('.moreButton')
 moreButton.addEventListener('click', () => {
     let limit = prompt('How many more Pokemon should I load?')
@@ -71,8 +79,6 @@ moreButton.addEventListener('click', () => {
 const newButton = document.querySelector(".newButton");
 newButton.addEventListener("click", () => {
   let pokeName = prompt("What is the name of your new Pokemon?");
-  let pokeHeight = prompt("How tall is this Pokemon?");
-  let pokeWeight = prompt("How heavy is this Pokemon?");
   let pokeAbilities = prompt (
     "What are your Pokemon's abilities? (use a comma separated list)",
   )
@@ -81,8 +87,6 @@ newButton.addEventListener("click", () => {
   )
   let newPokemon = new Pokemon(
     pokeName,
-    pokeHeight,
-    pokeWeight,
     getAbilitiesArray(pokeAbilities),
     getTypesArray(pokeTypes)
   )
@@ -112,11 +116,9 @@ function getTypesArray(spacedString) {
 }
 
 class Pokemon {
-  constructor(name, height, weight, abilities, types) {
+  constructor(name, abilities, types) {
     ;(this.id = 9001),
       (this.name = name),
-      (this.height = height),
-      (this.weight = weight),
       (this.abilities = abilities),
       (this.types = types)
   }
@@ -185,7 +187,7 @@ function populateCardBack(pokemon) {
   pokeTop.className = "pokeTop";
 
   const abilDiv = document.createElement("div");
-  pokeTop.appendChild(abilDiv);
+  pokeBack.appendChild(abilDiv);
   abilDiv.className = "abilDiv";
 
   const typeDiv = document.createElement("div");
