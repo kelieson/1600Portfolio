@@ -2,17 +2,51 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+    list-style-type: none;
+}
+
+header h1 {
+    display: flex;
+    justify-content: center;
+    padding-top: 2rem;
+    padding-bottom: .5rem;
+    color: rgb(173, 114, 5);
+    font-size: 2.4rem;
+}
+
+.buttonTown {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+}
+
+button {
+    padding: .8rem 1rem;
+    margin: 1rem;
+    background-color: rgb(173, 114, 5);
+    color: white;
+    font-weight: 700;
+    font-size: 1rem;
+    border-style: none;
+    border-radius: 10px;
+}
+
+button:hover {
+    box-shadow: 0px 2px 25px rgb(0, 145, 120);
+    color: rgb(0, 255, 213);
 }
 
 .pokeGrid {
     display: flex;
     flex-wrap: wrap;
+    justify-content: center;
+    margin-top: .5rem;
 }
 
 .scene {
     width: 200px;
     height: 260px;
-    margin: .5rem;
+    margin: 1rem;
     perspective: 600px;
 }
 
@@ -38,13 +72,43 @@
 
 .front {
     background: pink;
+    border-radius: 10px;
+    box-shadow: 0px 2px 5px rgb(109, 129, 126);
 }
 
 .back {
-    background: powderblue;
+    background: rgb(240, 234, 224);
+    color: white;
     transform: rotateY(180deg);
+    box-shadow: 0px 0px 30px rgb(82, 124, 119);
+    border-radius: 10px;
+    border-style: solid;
+    border-width: 8px;
+    border-color: rgb(255, 166, 0);
+    padding-left: 1rem;
+}
+
+.typeDiv {
+    padding-top: .5rem;
+    color: rgb(104, 3, 0);
+}
+
+.abilDiv {
+    padding-top: 1rem;
+    color: rgb(0, 49, 41);
 }
 
 figure img {
     width: 200px;
+}
+
+li {
+    text-transform: capitalize;
+}
+
+figcaption {
+    display: flex;
+    justify-content: center;
+    color: white;
+    font-weight: 800;
 }
