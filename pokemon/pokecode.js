@@ -40,7 +40,7 @@ async function getAllSimplePokemon() {
             weight: pokeData.weight,
             height: pokeData.height,
             stats: pokeData.stats,
-            items: pokeData.held_items,
+            held_items: pokeData.held_items,
           }
           allPokemon.push(mappedPokemon)
         })
@@ -54,7 +54,6 @@ function getAllPokemonByType(type) {
   return allPokemon.filter((pokemon) => pokemon.types[0].type.name == type)
 }
 
-
 const typeSelect = document.querySelector('#typeSelect')
 typeSelect.addEventListener('change', (event) => {
   const usersTypeChoice = event.target.value.toLowerCase()
@@ -62,6 +61,16 @@ typeSelect.addEventListener('change', (event) => {
   removeChildren(pokeGrid)
   allByType.forEach((item) => populatePokeCard(item))
 })
+
+/*
+const searchButton = document.querySelector('.searchButton')
+searchButton.addEventListener('click', () => {
+  let searchName = prompt('Which Pokemon are you looking for?')
+  removeChildren(pokeGrid)
+  return allPokemon.filter((pokemon) => pokemon.name === searchName)
+  populatePokeCard(pokeData)
+})
+*/
 
 const resetButton = document.querySelector(".reset")
 resetButton.addEventListener('click', () => {
@@ -75,6 +84,30 @@ moreButton.addEventListener('click', () => {
     let offset = prompt('At which Pokemon ID should I start loading?')
     loadPokemon(offset, limit)
 })
+/*
+const searchButton = document.createElement("button");
+searchButton.textContent = "Search by Name";
+searchButton.addEventListener('click', () => {
+  const searchName = prompt('Which Pokemon are you looking for?')
+  getPokemonByName
+});
+const buttons = document.querySelector(".buttons")
+buttons.appendChild(searchButton);
+
+
+  const targetPoke = allPokemon().filter(
+    (allPokemon) => pokemon.name === target
+  )
+
+function loadPoke(allPokemon) {
+  populatePokeCard(targetPoke)
+}
+
+
+function getPokemonByName(searchName) {
+  return allPokemon.filter((pokemon) => pokemon.name === searchName)
+}
+*/
 
 const newButton = document.querySelector(".newButton");
 newButton.addEventListener("click", () => {
@@ -85,7 +118,7 @@ newButton.addEventListener("click", () => {
   let pokeTypes = prompt (
     "Which type(s) is your Pokemon? (one or two, separated by a space)"
   )
-  let newPokemon = new Pokemon(
+  let newPokemon = new Poke(
     pokeName,
     getAbilitiesArray(pokeAbilities),
     getTypesArray(pokeTypes)
@@ -115,7 +148,7 @@ function getTypesArray(spacedString) {
   })
 }
 
-class Pokemon {
+class Poke {
   constructor(name, abilities, types) {
     ;(this.id = 9001),
       (this.name = name),
@@ -302,7 +335,7 @@ function getPokeTypeColor(pokeType) {
           color = '#29036A'
           break
       case 'dark':
-          color = '##2D221C'
+          color = '#2D221C'
           break
       case 'steel':
           color = '#454545'
