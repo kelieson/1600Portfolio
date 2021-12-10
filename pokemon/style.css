@@ -29,6 +29,7 @@ button {
     font-size: 1rem;
     border-style: none;
     border-radius: 10px;
+    font-family: "work sans";
 }
 
 button:hover {
@@ -57,6 +58,7 @@ button:hover {
     transform-style: preserve-3d;
     cursor: pointer;
     position: relative;
+    font-family: "work sans";
 }
 
 .cardFace {
@@ -85,17 +87,37 @@ button:hover {
     border-style: solid;
     border-width: 8px;
     border-color: rgb(255, 166, 0);
-    padding-left: 1rem;
+}
+
+.itemDiv {
+    display: flex;
+    justify-content: center;
+    color: rgb(33, 0, 49);
+    align-items: flex-end;
+    height: 100%;
+    padding-bottom: 9rem;
+}
+
+.itemList {
+    display: flex;
+    flex-direction: column;
+}
+
+.itemList li {
+    display: flex;
+    justify-content: center;
 }
 
 .typeDiv {
     padding-top: .5rem;
     color: rgb(104, 3, 0);
+    padding-left: 1rem;
 }
 
 .abilDiv {
     padding-top: 1rem;
     color: rgb(0, 49, 41);
+    padding-left: 1rem;
 }
 
 figure img {
@@ -111,4 +133,5 @@ figcaption {
     justify-content: center;
     color: white;
     font-weight: 800;
+    font-size: 1.2rem;
 }
