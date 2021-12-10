@@ -22,7 +22,7 @@ function loadPokemon(offset = 0, limit = 25) {
 
 const pokeGrid = document.querySelector(".pokeGrid");
 
-loadPokemon(100, 50)
+loadPokemon(0, 25)
 
 const allPokemon = await getAllSimplePokemon()
 
@@ -52,11 +52,6 @@ function getAllPokemonByType(type) {
   return allPokemon.filter((pokemon) => pokemon.types[0].type.name == type)
 }
 
-const typeButton = document.querySelector('.typeButton')
-typeButton.addEventListener('click', () => {
-  const allByType = getAllPokemonByType('fire')
-  allByType.forEach((item) => populatePokeCard(item))
-})
 
 const typeSelect = document.querySelector('#typeSelect')
 typeSelect.addEventListener('change', (event) => {
@@ -181,11 +176,16 @@ function typesBackground(pokemon, card) {
 }
 
 function populateCardBack(pokemon) {
+
   const pokeBack = document.createElement("div");
   pokeBack.className = "cardFace back";
   
+  const pokeTop = document.createElement("div");
+  pokeBack.appendChild(pokeTop)
+  pokeTop.className = "pokeTop";
+
   const abilDiv = document.createElement("div");
-  pokeBack.appendChild(abilDiv);
+  pokeTop.appendChild(abilDiv);
   abilDiv.className = "abilDiv";
 
   const typeDiv = document.createElement("div");
@@ -193,16 +193,18 @@ function populateCardBack(pokemon) {
   typeDiv.className = "typeDiv";
 
   const HPDiv = document.createElement("div");
-  pokeBack.appendChild(HPDiv);
+  pokeTop.appendChild(HPDiv);
   HPDiv.className = "HPDiv";
 
-  /*const itemDiv = document.createElement("div");
+  const itemDiv = document.createElement("div");
   pokeBack.appendChild(itemDiv);
   itemDiv.className = "itemDiv";
-  */
 
-  //const itemLabel = document.createElement("h4")
-  //itemLabel.textContent = "Held Items:"
+/* 
+  const itemLabel = document.createElement("h4")
+  itemLabel.textContent = "Held Items:"
+  itemDiv.appendChild(itemLabel);
+*/
 
   const typeLabel = document.createElement('h4')
   typeLabel.textContent = "Types:";
@@ -226,23 +228,24 @@ function populateCardBack(pokemon) {
     typeItem.textContent = pokeType.type.name
     typesList.appendChild(typeItem)
   });
-/*
+
   if(pokemon.stats) {
-    const pokeHP = doucment.createElement('h4')
+    const pokeHP = document.createElement('h4')
     pokeHP.textContent = `HP: ${pokemon.stats[0].base_stat}`
     HPDiv.appendChild(pokeHP)
   }
 
+if(pokemon.held_items) {
   const itemList = document.createElement("ul");
   pokemon.held_items.forEach((heldItem) => {
     let itemItem = document.createElement("li")
     itemItem.textContent = `Item: ${heldItem.item.name}`
     itemList.appendChild(itemItem)
     itemList.className = "itemList"
-  });
-  */
+    itemDiv.appendChild(itemList)
+  })
+};
 
-  //itemDiv.appendChild(itemList)
   typeDiv.appendChild(typesList)
   abilDiv.appendChild(abilityList);
   return pokeBack;

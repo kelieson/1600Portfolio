@@ -5,6 +5,11 @@
     list-style-type: none;
 }
 
+body {
+    background: linear-gradient(to bottom, #bdebe3, #001411);
+    min-height: 100vh;
+}
+
 header h1 {
     display: flex;
     justify-content: center;
@@ -12,12 +17,33 @@ header h1 {
     padding-bottom: .5rem;
     color: rgb(173, 114, 5);
     font-size: 2.4rem;
+    font-family: "Press Start 2P";
+}
+
+.buttons {
+    display: flex;
+    justify-content: center;
 }
 
 .buttonTown {
     display: flex;
     justify-content: center;
-    width: 100%;
+}
+
+.buttonTown2ElectricBoogaloo {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.typeButton {
+    padding: .3rem 1rem;
+    margin: .5rem;
+}
+
+.typeSelect {
+    width: 8rem;
 }
 
 button {
@@ -75,7 +101,7 @@ button:hover {
 .front {
     background: pink;
     border-radius: 10px;
-    box-shadow: 0px 2px 5px rgb(109, 129, 126);
+    box-shadow: 0px 2px 20px rgb(6, 26, 6);
 }
 
 .back {
@@ -93,9 +119,7 @@ button:hover {
     display: flex;
     justify-content: center;
     color: rgb(33, 0, 49);
-    align-items: flex-end;
-    height: 100%;
-    padding-bottom: 9rem;
+    margin-top: 4rem;
 }
 
 .itemList {
@@ -131,6 +155,7 @@ li {
 figcaption {
     display: flex;
     justify-content: center;
+    flex-wrap: wrap;
     color: white;
     font-weight: 800;
     font-size: 1.2rem;
