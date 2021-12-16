@@ -3,9 +3,13 @@
     padding: 0;
     box-sizing: border-box;
     font-family: "Roboto";
-    background-color: rgb(10, 10, 10);
     color: white;
 }
+
+body {
+    background-image: url(/images/sky.jpg);
+}
+
 
 .mainContainer {
     display: flex;
@@ -14,23 +18,26 @@
 }
 
 h1 {
+    font-family: "Roboto";
+    font-weight: 900;
     display: flex;
     justify-content: center;
     padding-top: 2rem;
-    font-size: 2rem;
-    font-weight: 200;
+    font-size: 3rem;
+    color: rgb(255, 174, 0);
+    text-transform: uppercase;
+    margin-bottom: 3rem;
 }
 
 .nav {
     margin-left: 2em;
-}
-
-.navList {
-    padding-top: 2rem;
+    padding: 1rem;
+    background-image: linear-gradient(to bottom right, rgba(0, 25, 27, 0.63), rgba(0, 36, 53, 0.637));
 }
 
 li {
-    padding: .2rem;
+    padding: .5rem;
+    font-size: 1.4rem;
 }
 
 section {
@@ -56,7 +63,43 @@ img {
     margin: 1rem;
 }
 
-footer {
+
+.nev {
+    background-color: rgba(0, 0, 0, 0.685);
+    width: 100%;
+  }
+  
+  .nev ul {
+    display: flex;
+    justify-content: flex-end;
+    list-style-type: none;
+  }
+  
+.nev li {
+    padding: 0;
+    margin: 0;
+}
+
+  .nev ul a {
+    display: block;
+    padding: 1.25rem;
+    font-size: 1.5rem;
+    color: #ffe1e6;
+    text-decoration: none;
+    font-weight: 500;
+  }
+  
+  .nev ul li a:hover {
+    background-color: rgb(255, 174, 0);
+    color: rgb(58, 37, 28);
+  }
+  
+  .nev .active {
+    background-color: rgba(1, 20, 17, 0.904);
+    color: rgb(255, 174, 0);
+  }
+
+  footer {
     display: flex;
     padding-left: .7rem;
     padding-bottom: .7rem;

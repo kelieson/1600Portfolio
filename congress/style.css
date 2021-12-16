@@ -5,6 +5,47 @@
     font-family: "Roboto";
 }
 
+img {
+    border-radius: 5px;
+}
+
+.top {
+    background-image: url(/images/flag.jpg);
+}
+
+nav {
+    padding: .25rem;
+    background-image: linear-gradient(to bottom, rgba(0, 0, 0, 0.788), rgba(0, 0, 0, 0));
+}
+
+nav a {
+    text-decoration: none;
+    color: white;
+    padding: .25rem;
+}
+
+nav a:hover {
+    color: rgb(204, 204, 204);
+}
+
+header {
+    padding-top: 5rem;
+    padding-bottom: 6.8rem;
+    min-width: 100vw;
+    display: flex;
+    justify-content: center;
+}
+
+.title {
+    color: rgb(255, 255, 255);
+    font-size: 2.5em;
+    text-shadow: 0px 0px 60px rgb(0, 0, 0);
+    width: fit-content;
+    text-transform: uppercase;
+    padding:1rem;
+    border-radius: 100px;
+}
+
 .members {
     display: flex;
     flex-wrap: wrap;
@@ -25,19 +66,11 @@ figcaption {
 }
 
 img {
-    box-shadow: 0px 2px 6px rgb(138, 138, 138);
-}
-
-.title {
-    display: flex;
-    justify-content: center;
-    color: rgb(54, 54, 54);
-    margin-top: 2.5rem;
-    font-size: 2.5em;
-    margin-bottom: 1.3rem;
+    box-shadow: 0px 2px 16px rgb(138, 138, 138);
 }
 
 .faqHeader {
+    padding-top: 1rem;
     padding-left: 2.5rem;
     padding-bottom: .2rem;
     font-weight: 800;
@@ -51,11 +84,11 @@ img {
 }
 
 .repSpotlight img {
-    box-shadow: 0px 2px 6px rgb(59, 2, 2);
+    box-shadow: 0px 2px 16px rgb(59, 2, 2);
 }
 
 .repSpotlight figure:hover img{
-    box-shadow: 0px 5px 15px rgb(59, 2, 2);
+    box-shadow: 0px 5px 25px rgb(59, 2, 2);
 }
 
 .repSpotlight figcaption {
@@ -75,11 +108,11 @@ img {
 }
 
 .demSpotlight img {
-    box-shadow: 0px 2px 6px rgb(2, 27, 59);
+    box-shadow: 0px 2px 16px rgb(2, 27, 59);
 }
 
 .demSpotlight figure:hover img{
-    box-shadow: 0px 5px 15px rgb(2, 27, 59);
+    box-shadow: 0px 5px 25px rgb(2, 27, 59);
 }
 
 .demSpotlight figcaption {
@@ -103,7 +136,7 @@ figure:hover {
 }
 
 figure:hover img{
-    box-shadow: 0px 5px 15px rgb(138, 138, 138);
+    box-shadow: 0px 5px 25px rgb(138, 138, 138);
 }
 
 .missingDiv {
@@ -211,18 +244,22 @@ figure:hover img{
     padding-top: 1.2rem;
     padding-bottom: .5rem;
     font-size: .8rem;
-    background-color: rgb(230, 230, 230);
-    display: flex;
     width: 100vw;
-    justify-content: space-between;
     padding-left: 2.5rem;
     padding-right: 2.5rem;
+    text-align: right;
 }
 
 .homeButton {
-    color: black;
+    color: white;
+    background-color: rgb(109, 24, 24);
+    border-top-left-radius: 5px;
+    border-top-right-radius: 5px;
+    padding: .5rem;
+    margin-left: 2rem;
 }
 
 .homeButton:hover {
-    text-shadow: 0px 0px 8px rgb(138, 138, 138);
+    box-shadow: 0px 0px 18px rgb(138, 138, 138);
+    color: rgb(217, 241, 255);
 }

@@ -1,12 +1,52 @@
+* {
+    padding: 0;
+    margin: 0;
+    font-family: "Roboto";
+}
+
+body {
+    background-image: url(/images/sky.jpg);
+}
+
+nav {
+    background-color: rgba(0, 0, 0, 0.685);
+    width: 100%;
+  }
+  
+  nav ul {
+    display: flex;
+    justify-content: flex-end;
+    list-style-type: none;
+  }
+  
+  nav ul a {
+    display: block;
+    padding: 1.25rem;
+    font-size: 1.5rem;
+    color: #ffe1e6;
+    text-decoration: none;
+  }
+  
+  nav ul li a:hover {
+    background-color: rgb(255, 174, 0);
+    color: rgb(58, 37, 28);
+  }
+  
+  nav .active {
+    background-color: rgba(1, 20, 17, 0.904);
+    color: rgb(255, 174, 0);
+  }
+
 header {
     display: flex;
     justify-content: center;
-    font-weight: bold;
-    font-size: 2rem;
+    font-weight: 900;
+    font-size: 3rem;
     padding: 2rem;
     padding-top: 2.5rem;
-    color: rgb(17, 17, 17);
+    color: rgb(255, 174, 0);
     font-family: "Roboto";
+    text-transform: uppercase;
 }
 
 main {
@@ -17,7 +57,9 @@ main {
 
 img {
     border-radius: 8px;
-    box-shadow: 2px 3px 7px rgb(51, 51, 51);
+    box-shadow: 0px 4px 50px rgb(0, 0, 0);
+    margin: 2rem;
+    margin-bottom: 0;
 }
 
 figcaption {
@@ -26,7 +68,7 @@ figcaption {
     padding-top: 1rem;
     padding-bottom: 2rem;
     font-weight: 700;
-    color: rgb(17, 17, 17);
+    color: white;
     font-size: 1.3rem;
 }
 

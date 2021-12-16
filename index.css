@@ -25,8 +25,13 @@ a {
     text-decoration: none;
 }
 
+.topp {
+    background: linear-gradient(to top, #ff7083c5, rgb(255, 255, 255));
+}
+
 #navbar {
-    background-color: rgb(82, 0, 11);
+    background-image: linear-gradient(to bottom, rgb(255, 228, 228), rgba(255, 220, 225, 0.836));
+    background-color: rgba(153, 0, 20, 0.753);
     width: 100%;
     position: fixed;
 }
@@ -34,29 +39,36 @@ a {
 .nav-list {
     display: flex;
     justify-content: flex-end;
-    list-style-type: none;
+    list-style-type: none;;
 }
 
 .nav-list a {
     display: block;
     padding: 1.25rem;
-    font-size: 1.5rem;
-    color: #ffe1e6;
+    font-size: 1rem;
+    color: rgb(94, 167, 151);
+    font-family: "Press Start 2P"
 }
 
 .nav-list a:hover {
-    background-color: rgb(114, 1, 16);
+    background-color: rgb(94, 167, 151);
+    color: rgb(255, 220, 224);
 }
 
 #welcome-section {
     height: 100vh;
-    background: linear-gradient(to top, #ff002250, #ffe1e6);
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    color: rgb(255, 37, 66);
+    color: rgb(221, 0, 29);
     font-size: 2.5rem;
+    text-shadow: 0px 1px 6px rgb(221, 0, 29);
+}
+
+#welcome-section p {
+    color: rgb(94, 167, 151);
+    text-shadow: 0px 1px 9px rgb(94, 167, 151);
 }
 
 #projects {
@@ -64,14 +76,14 @@ a {
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    margin-top: 50px;
-    margin-bottom: 50px;
+    height: 100vh;
     text-justify: center;
     text-align: center;
 }
 
 #projects h2 {
     color: rgb(223, 0, 30);
+    text-shadow: 1px 1px 2px rgb(94, 167, 151);
     font-size: 2rem;
     margin: 20px 20px 35px 20px;
 }
@@ -82,6 +94,7 @@ a {
     flex-wrap: wrap;
     justify-content: center;
     align-items: center;
+
 }
 
 .projects-grid img {
@@ -97,7 +110,8 @@ img {
 }
 
 figcaption {
-    color: #ff889a;
+    text-shadow: 1px 1px 2px #ff889a;
+    color: rgb(94, 167, 151);
     font-size: 1.25rem;
     margin-top: 10px;
 }
@@ -107,12 +121,13 @@ figcaption {
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    height: 30vh;
+    height: 40vh;
     background-color: #ffd0d7;
 }
 
 #contact h2 {
     color: rgb(255, 37, 66);
+    text-shadow: 0px 1px 8px #ff677d;
     font-size: 3rem;
     padding-top: 30px
 }
@@ -121,6 +136,7 @@ figcaption {
     color: rgb(255, 37, 66);
     font-style: italic;
     padding-top: 10px;
+    text-shadow: 0px 1px 8px #ff677d;
 }
 
 #contact div {
@@ -144,9 +160,9 @@ footer {
     display: flex;
     justify-content: center;
     align-items: center;
-    background-color: rgb(114, 1, 16);
-    color: rgb(56, 0, 7);
+    background-color: rgb(255, 193, 200);
+    color: rgb(211, 104, 116);
     font-size: small;
-    padding-top: 10px;
-    padding-bottom: 5px;
+    font-family: "Roboto";
+    padding: 1rem;
 }

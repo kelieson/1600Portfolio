@@ -26,7 +26,13 @@ nav ul a {
 }
 
 nav ul li a:hover {
-  background-color: rgb(114, 1, 16);
+  background-color: rgb(255, 174, 0);
+  color: rgb(58, 37, 28);
+}
+
+nav .active {
+  background-color: rgba(1, 20, 17, 0.904);
+  color: rgb(255, 174, 0);
 }
 
 body {
@@ -36,14 +42,14 @@ body {
   background-image: url(/images/sky.jpg);
 }
 
-
 h1 {
   font-size: 3rem;
   display: flex;
   justify-content: center;
-  padding-top: 2rem;
-  color: rgb(255, 115, 0);
+  padding-top: 2.5rem;
+  color: rgb(255, 174, 0);
   text-transform: uppercase;
+  margin-bottom: 2rem
 }
 
 header {
@@ -59,7 +65,7 @@ button {
   font-weight: 600;
   padding: 1rem;
   margin: 1rem;
-  color: rgb(224, 71, 0);
+  color: rgb(58, 37, 28);
   background-image: linear-gradient(to bottom right, rgb(89, 180, 255), rgb(110, 255, 243));
   border-style: none;
   box-shadow: 2px 1px 16px rgb(0, 0, 0);
@@ -67,17 +73,17 @@ button {
 }
 
 button:hover {
-  background-image: linear-gradient(to top left, rgb(31, 154, 255), rgb(47, 255, 238));
-  color: rgb(235, 113, 0);
-  box-shadow: 2px 1px 26px rgb(35, 255, 244);
+  background-image: linear-gradient(to top left, rgb(89, 180, 255), rgb(110, 255, 243));
+  color: rgb(78, 38, 0);
+  box-shadow: 2px 1px 30px rgba(35, 255, 244, 0.568);
 }
 
 main {
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
-    padding-left: 2rem;
-    padding-right: 2rem;
+    padding-left: 5vw;
+    padding-right: 5vw;
     padding-top: 3rem;
   }
 
@@ -87,7 +93,7 @@ figure {
   
 figure img {
     width: 200px;
-    border-radius: 3px;
+    border-radius: 8px;
     box-shadow: 0px 4px 26px rgb(0, 0, 0);
   }
 
@@ -99,7 +105,7 @@ figcaption {
 }
 
 figure img:hover {
-  box-shadow: 0px 0px 35px rgba(47, 255, 238, 0.726)
+  box-shadow: 0px 0px 50px rgba(0, 255, 234, 0.548)
 }
 
 footer {
@@ -109,5 +115,5 @@ footer {
   padding-left: .7rem;
   padding-bottom: .7rem;
   font-size: .8rem;
+  color: white;
 }
-

@@ -14,7 +14,7 @@ header h1 {
     display: flex;
     justify-content: center;
     padding-top: 3rem;
-    padding-bottom: .5rem;
+    padding-bottom: 2rem;
     color: rgb(241, 157, 0);
     font-size: 2.8rem;
     font-family: "Press Start 2P";
@@ -197,4 +197,47 @@ figcaption {
     color: white;
     font-weight: 800;
     font-size: 1.2rem;
+}
+
+footer {
+    text-align: center;
+    margin-top: 3rem;
+    margin-bottom: .5rem;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+nav {
+    padding: 1rem;
+}
+
+nav a {
+    text-decoration: none;
+    color: rgb(50, 141, 126);
+    padding: 1rem;
+    font-family: "Roboto";
+}
+
+nav a:hover {
+    color: rgb(241, 157, 0);
+}
+
+@media only screen and (max-width: 1012px){
+
+    .button1{
+        display: flex;
+    }
+
+    .button2 {
+        display: flex;
+    }
 }
