@@ -68,7 +68,7 @@ function populateMemberDiv(simpleMembers) {
     let figImg = document.createElement("img");
     let figCaption = document.createElement("figcaption");
     figImg.src = member.imgURL;
-    figCaption.textContent = member.name;
+    figCaption.textContent = `${member.shortTitle} ${member.name}`;
     senFigure.appendChild(figImg);
     senFigure.appendChild(figCaption);
     memberDiv.appendChild(senFigure);
@@ -101,7 +101,7 @@ function populateSeniorDiv(seniorMembers) {
     let figImg = document.createElement("img");
     let figCaption = document.createElement("figcaption");
     figImg.src = member.imgURL;
-    figCaption.textContent = `${member.name} has held office for ${member.seniority} years`; 
+    figCaption.textContent = `${member.shortTitle} ${member.name} has held office for ${member.seniority} years`; 
     spotFigure.appendChild(figImg);
     spotFigure.appendChild(figCaption);
     seniorDiv.appendChild(spotFigure)
@@ -134,7 +134,7 @@ function populateLoyalDiv(loyalMembers) {
     let figImg = document.createElement("img");
     let figCaption = document.createElement("figcaption");
     figImg.src = member.imgURL;
-    figCaption.textContent = `${member.name}`; 
+    figCaption.textContent = `${member.shortTitle} ${member.name}`; 
     spotFigure.appendChild(figImg);
     spotFigure.appendChild(figCaption);
     loyalDiv.appendChild(spotFigure)
@@ -169,7 +169,7 @@ function populateMissingDiv(missingMembers) {
     let figImg = document.createElement("img");
     let figCaption = document.createElement("figcaption");
     figImg.src = member.imgURL;
-    figCaption.textContent = `${member.name} misses ${member.missedVotesPct}% of their votes`; 
+    figCaption.textContent = `${member.shortTitle} ${member.name} misses ${member.missedVotesPct}% of their votes`; 
     spotFigure.appendChild(figImg);
     spotFigure.appendChild(figCaption);
     missingDiv.appendChild(spotFigure)
@@ -212,7 +212,7 @@ function populateDemSpotlight(simpleMembers) {
     let figImg = document.createElement("img");
     let figCaption = document.createElement("figcaption");
     figImg.src = member.imgURL;
-    figCaption.textContent = member.name;
+    figCaption.textContent = `${member.shortTitle} ${member.name}`;
     spotFigure.appendChild(figImg);
     spotFigure.appendChild(figCaption);
     demSpotlight.appendChild(spotFigure)
@@ -246,7 +246,7 @@ function populateRepSpotlight(simpleMembers) {
     let figImg = document.createElement("img");
     let figCaption = document.createElement("figcaption");
     figImg.src = member.imgURL;
-    figCaption.textContent = member.name;
+    figCaption.textContent = `${member.shortTitle} ${member.name}`;
     spotFigure.appendChild(figImg);
     spotFigure.appendChild(figCaption);
     repSpotlight.appendChild(spotFigure)
@@ -280,7 +280,7 @@ function populateSpotlight(simpleMembers) {
     let figCaption = document.createElement("figcaption");
     let allRepFilter = document.createElement("div");
     figImg.src = member.imgURL;
-    figCaption.textContent = member.name;
+    figCaption.textContent = `${member.shortTitle} ${member.name}`;
     spotFigure.appendChild(figImg);
     spotFigure.appendChild(figCaption);
     spotlight.appendChild(allRepFilter);

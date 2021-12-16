@@ -5,6 +5,13 @@
     list-style-type: none;
 }
 
+.container {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    min-height: 100vh;
+}
+
 body {
     background: linear-gradient(to bottom, #c4fff5, #00574a);
     min-height: 100vh;
@@ -201,12 +208,9 @@ figcaption {
 
 footer {
     text-align: center;
-    margin-top: 3rem;
-    margin-bottom: .5rem;
+    padding: 1rem;
+    padding-top: 3.5rem;
 }
-
-
-
 
 
 
@@ -230,6 +234,7 @@ nav a {
 nav a:hover {
     color: rgb(241, 157, 0);
 }
+
 
 @media only screen and (max-width: 1012px){
 

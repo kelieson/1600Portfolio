@@ -240,11 +240,18 @@ figure:hover img{
     margin-top: 2.5rem;
 }
 
+.bottom {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: flex-end;
+    width: 100vw;
+}
+
 .footer {
     padding-top: 1.2rem;
     padding-bottom: .5rem;
     font-size: .8rem;
-    width: 100vw;
     padding-left: 2.5rem;
     padding-right: 2.5rem;
     text-align: right;

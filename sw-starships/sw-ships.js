@@ -45,4 +45,6 @@ function populateShipView(shipData) {
     })
     shipView.appendChild(shipImage)
     shipView.appendChild(shipName)
+
+    shipView.className = "shipView"
 }
