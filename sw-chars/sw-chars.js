@@ -92,3 +92,4 @@ characters.forEach((element) => {
   main.appendChild(personFig)
 })
 }
+

@@ -6,17 +6,44 @@
   position: relative;
 }
 
+nav {
+  background-color: rgba(0, 0, 0, 0.685);
+  width: 100%;
+}
+
+nav ul {
+  display: flex;
+  justify-content: flex-end;
+  list-style-type: none;
+}
+
+nav ul a {
+  display: block;
+  padding: 1.25rem;
+  font-size: 1.5rem;
+  color: #ffe1e6;
+  text-decoration: none;
+}
+
+nav ul li a:hover {
+  background-color: rgb(114, 1, 16);
+}
+
 body {
   min-height: 100vh;
   padding-bottom: 4rem;
+  background-image: linear-gradient(to bottom, rgb(37, 37, 37), rgb(17, 17, 17));
+  background-image: url(/images/sky.jpg);
 }
 
 
 h1 {
+  font-size: 3rem;
   display: flex;
   justify-content: center;
   padding-top: 2rem;
-  color: rgb(24, 24, 24);
+  color: rgb(255, 115, 0);
+  text-transform: uppercase;
 }
 
 header {
@@ -28,28 +55,30 @@ header {
 }
 
 button {
-  font-weight: 700;
+  font-size: 1.2rem;
+  font-weight: 600;
   padding: 1rem;
   margin: 1rem;
-  color: rgb(14, 14, 14);
-  color: rgb(235, 113, 0);
-  background-color: white;
-  border-color: rgb(226, 226, 226);
-  box-shadow: 2px 1px 6px rgb(194, 194, 194);
+  color: rgb(224, 71, 0);
+  background-image: linear-gradient(to bottom right, rgb(89, 180, 255), rgb(110, 255, 243));
+  border-style: none;
+  box-shadow: 2px 1px 16px rgb(0, 0, 0);
   border-radius: 5px;
 }
 
 button:hover {
-  background-color: rgb(14, 14, 14);
-  color: rgb(255, 255, 255);
-  border-color: rgb(14, 14, 14);
-  box-shadow: 2px 1px 6px rgb(14, 14, 14);
+  background-image: linear-gradient(to top left, rgb(31, 154, 255), rgb(47, 255, 238));
+  color: rgb(235, 113, 0);
+  box-shadow: 2px 1px 26px rgb(35, 255, 244);
 }
 
 main {
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
+    padding-left: 2rem;
+    padding-right: 2rem;
+    padding-top: 3rem;
   }
 
 figure {
@@ -59,15 +88,18 @@ figure {
 figure img {
     width: 200px;
     border-radius: 3px;
-    box-shadow: 1px 1px 6px rgb(185, 185, 185);
-
+    box-shadow: 0px 4px 26px rgb(0, 0, 0);
   }
 
 figcaption {
   display: flex;
   justify-content: center;
-  color: rgb(14, 14, 14);
+  color: rgb(235, 113, 0);
   padding-top: .5rem;
+}
+
+figure img:hover {
+  box-shadow: 0px 0px 35px rgba(47, 255, 238, 0.726)
 }
 
 footer {
