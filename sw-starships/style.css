@@ -106,8 +106,12 @@ img {
 
   footer {
     display: flex;
-    padding-left: .7rem;
     padding-bottom: .7rem;
     font-size: .8rem;
     padding-top: 7rem;
+}
+
+footer p {
+  text-align: center;
+  width: 100%;
 }

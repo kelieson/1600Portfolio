@@ -116,8 +116,13 @@ footer {
   display: flex;
   bottom: 0;
   position: absolute;
-  padding-left: .7rem;
   padding-bottom: .7rem;
   font-size: .8rem;
   color: white;
+  width: 100%;
+}
+
+footer p {
+  width: 100%;
+  text-align: center;
 }
